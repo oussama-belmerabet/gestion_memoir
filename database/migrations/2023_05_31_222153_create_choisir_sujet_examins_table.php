@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('choisir_sujet_examins', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('num_es');
+            $table->unsignedBigInteger('num_sujet');
+
+            $table->foreign('num_es')->references('num_es')->on('enseignants');
+            $table->foreign('num_sujet')->references('num_sujet')->on('sujets');
         });
     }
 

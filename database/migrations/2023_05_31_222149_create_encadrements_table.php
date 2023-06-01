@@ -12,9 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('encadrements', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_enc');
+            $table->integer('année');
+            $table->string('état');
+            $table->unsignedBigInteger('num_es');
             $table->timestamps();
+
+            $table->foreign('num_es')->references('num_es')->on('enseignants');
         });
+
     }
 
     /**

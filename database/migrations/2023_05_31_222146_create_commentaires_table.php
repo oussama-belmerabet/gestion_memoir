@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('commentaires', function (Blueprint $table) {
-            $table->id();
+            $table->id('num_c');
+            $table->text('message');
             $table->timestamps();
         });
     }

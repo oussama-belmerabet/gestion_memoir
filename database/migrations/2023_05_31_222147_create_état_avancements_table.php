@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('état_avancements', function (Blueprint $table) {
-            $table->id();
+            $table->id('code_eA');
+            $table->date('date');
+            $table->text('description');
+            $table->integer('pourcentage');
+            $table->unsignedBigInteger('num_sujet');
             $table->timestamps();
+
+            $table->foreign('num_sujet')->references('num_sujet')->on('sujets');
         });
     }
 

@@ -12,8 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('classements', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('num_clsmn');
+            $table->unsignedBigInteger('num_et');
+            $table->unsignedBigInteger('num_sujet');
+
+            $table->foreign('num_et')->references('num_et')->on('les_etudiants');
+            $table->foreign('num_sujet')->references('num_sujet')->on('sujets');
         });
     }
 
