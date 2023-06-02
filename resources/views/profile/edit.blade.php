@@ -33,9 +33,7 @@
                             </p>
                         </div>
                         <p class="description text-center">
-                            {{ __('I like the way you work it') }}
-                            <br> {{ __('No diggity') }}
-                            <br> {{ __('I wanna bag it up') }}
+
                         </p>
                     </div>
                     <div class="card-footer">
@@ -86,50 +84,8 @@
                                         </span>
                                     </div>
                                     <div class="col-md-3 col-3 text-right">
-                                        <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i
-                                                class="fa fa-envelope"></i></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-2 col-2">
-                                        <div class="avatar">
-                                            <img src="{{ asset('paper/img/faces/joe-gardner-2.jpg') }}" alt="Circle Image"
-                                                class="img-circle img-no-padding img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7 col-7">
-                                            {{ __('Creative Tim') }}
-                                        <br />
-                                        <span class="text-success">
-                                            <small>{{ __('Available') }}</small>
-                                        </span>
-                                    </div>
-                                    <div class="col-md-3 col-3 text-right">
-                                        <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i
-                                                class="fa fa-envelope"></i></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-2 col-2">
-                                        <div class="avatar">
-                                            <img src="{{ asset('paper/img/faces/clem-onojeghuo-2.jpg') }}" alt="Circle Image"
-                                                class="img-circle img-no-padding img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-ms-7 col-7">
-                                        {{ __('Flume') }}
-                                        <br />
-                                        <span class="text-danger">
-                                            <small>{{ __('Busy') }}</small>
-                                        </span>
-                                    </div>
-                                    <div class="col-md-3 col-3 text-right">
-                                        <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i
-                                                class="fa fa-envelope"></i></button>
+                                        <button class="btn btn-sm btn-outline-success btn-round btn-icon">
+
                                     </div>
                                 </div>
                             </li>

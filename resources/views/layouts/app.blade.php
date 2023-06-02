@@ -1,20 +1,3 @@
-<!--
-=========================================================
- Paper Dashboard - v2.0.0
-=========================================================
-
- Product Page: https://www.creative-tim.com/product/paper-dashboard
- Copyright 2019 Creative Tim (https://www.creative-tim.com)
- UPDIVISION (https://updivision.com)
- Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard/blob/master/LICENSE)
-
- Coded by Creative Tim
-
-=========================================================
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +9,7 @@ The above copyright notice and this permission notice shall be included in all c
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <!-- Extra details for Live View on GitHub Pages -->
-    
+
     <title>
         {{ __('Paper Dashboard by Creative Tim') }}
     </title>
@@ -44,12 +27,12 @@ The above copyright notice and this permission notice shall be included in all c
 </head>
 
 <body class="{{ $class }}">
-    
+
     @auth()
         @include('layouts.page_templates.auth')
         @include('layouts.navbars.fixed-plugin')
     @endauth
-    
+
     @guest
         @include('layouts.page_templates.guest')
     @endguest
@@ -71,7 +54,7 @@ The above copyright notice and this permission notice shall be included in all c
     <script src="{{ asset('paper') }}/demo/demo.js"></script>
     <!-- Sharrre libray -->
     <script src="../assets/demo/jquery.sharrre.js"></script>
-    
+
     @stack('scripts')
 
     @include('layouts.navbars.fixed-plugin-js')

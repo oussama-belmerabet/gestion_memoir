@@ -1,20 +1,3 @@
-<!--
-=========================================================
- Paper Dashboard - v2.0.0
-=========================================================
-
- Product Page: https://www.creative-tim.com/product/paper-dashboard
- Copyright 2019 Creative Tim (https://www.creative-tim.com)
- UPDIVISION (https://updivision.com)
- Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard/blob/master/LICENSE)
-
- Coded by Creative Tim
-
-=========================================================
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +43,7 @@ The above copyright notice and this permission notice shall be included in all c
     <meta property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/209/opt_pd_laravel_thumbnail.jpg"/>
     <meta property="og:description" content="Start your development with a Bootstrap 4 Admin Dashboard built for Laravel Framework 5.5 and Up." />
     <meta property="og:site_name" content="Creative Tim" />
-    
+
     <title>
         {{ __('Paper Dashboard by Creative Tim') }}
     </title>
@@ -121,18 +104,13 @@ The above copyright notice and this permission notice shall be included in all c
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
+
             <div class="wrapper">
 
                 <div class="sidebar" data-color="white" data-active-color="danger">
                     <div class="logo">
-                        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-                            <div class="logo-image-small">
-                                <img src="{{ asset('paper') }}/img/logo-small.png">
-                            </div>
-                        </a>
-                        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                            {{ __('Creative Tim') }}
+                        <a href="#" class="simple-text logo-normal">
+                            {{ __('Gestion memoir') }}
                         </a>
                     </div>
                     <div class="sidebar-wrapper">
@@ -145,9 +123,8 @@ The above copyright notice and this permission notice shall be included in all c
                             </li>
                             <li >
                                 <a data-toggle="collapse" aria-expanded="true" href="#laravelExamples">
-                                    <i class="nc-icon"><img src="{{ asset('paper/img/laravel.svg') }}"></i>
                                     <p>
-                                            {{ __('Laravel examples') }}
+                                            {{ __('Acounts ') }}
                                         <b class="caret"></b>
                                     </p>
                                 </a>
@@ -155,71 +132,54 @@ The above copyright notice and this permission notice shall be included in all c
                                     <ul class="nav">
                                         <li >
                                             <a href="{{ route('profile.edit') }}">
-                                                <span class="sidebar-mini-icon">{{ __('UP') }}</span>
-                                                <span class="sidebar-normal">{{ __(' User Profile ') }}</span>
+                                                <span class="sidebar-normal">{{ __(' List Etudiant ') }}</span>
                                             </a>
                                         </li>
                                         <li class="active">
                                             <a href="{{ route('page.index', 'user') }}">
-                                                <span class="sidebar-mini-icon">{{ __('U') }}</span>
-                                                <span class="sidebar-normal">{{ __(' User Management ') }}</span>
+                                                <span class="sidebar-normal">{{ __('  List Responsable ') }}</span>
+                                            </a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="{{ route('page.index', 'user') }}">
+                                                <span class="sidebar-normal">{{ __('  List Enseignant ') }}</span>
+                                            </a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="{{ route('page.index', 'user') }}">
+                                                <span class="sidebar-normal">{{ __('  List des sujets ') }}</span>
+                                            </a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="{{ route('page.index', 'user') }}">
+                                                <span class="sidebar-normal">{{ __('  List Des Reclamation ') }}</span>
+                                            </a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="{{ route('page.index', 'user') }}">
+                                                <span class="sidebar-normal">{{ __('  List Des affectation ') }}</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li >
-                                <a href="{{ route('page.index', 'icons') }}">
-                                    <i class="nc-icon nc-diamond"></i>
-                                    <p>{{ __('Icons') }}</p>
-                                </a>
-                            </li>
-                            <li >
                                 <a href="{{ route('page.index', 'map') }}">
-                                    <i class="nc-icon nc-pin-3"></i>
                                     <p>{{ __('Maps') }}</p>
                                 </a>
                             </li>
-                            <li >
-                                <a href="{{ route('page.index', 'notifications') }}">
-                                    <i class="nc-icon nc-bell-55"></i>
-                                    <p>{{ __('Notifications') }}</p>
-                                </a>
-                            </li>
-                            <li >
                                 <a href="{{ route('page.index', 'tables') }}">
                                     <i class="nc-icon nc-tile-56"></i>
                                     <p>{{ __('Table List') }}</p>
                                 </a>
                             </li>
-                            <li >
-                                <a href="{{ route('page.index', 'typography') }}">
-                                    <i class="nc-icon nc-caps-small"></i>
-                                    <p>{{ __('Typography') }}</p>
-                                </a>
-                            </li>
-                            {{-- <li class="active-pro {{ $elementActive == 'upgrade' ? 'active' : '' }}">
-                                <a href="{{ route('page.index', 'upgrade') }}" class="bg-danger">
-                                    <i class="nc-icon nc-spaceship text-white"></i>
-                                    <p class="text-white">{{ __('Upgrade to PRO') }}</p>
-                                </a>
-                            </li> --}}
                         </ul>
                     </div>
                 </div>
     <div class="main-panel">
         <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
             <div class="container-fluid">
-                <div class="navbar-wrapper">
-                    <div class="navbar-toggle">
-                        <button type="button" class="navbar-toggler">
-                            <span class="navbar-toggler-bar bar1"></span>
-                            <span class="navbar-toggler-bar bar2"></span>
-                            <span class="navbar-toggler-bar bar3"></span>
-                        </button>
-                    </div>
-                    <a class="navbar-brand" href="#pablo">{{ __('Paper Dashboard') }}</a>
-                </div>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                     aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -296,7 +256,7 @@ The above copyright notice and this permission notice shall be included in all c
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-12">
                                                     </div>
 
@@ -323,103 +283,16 @@ The above copyright notice and this permission notice shall be included in all c
                         </div>
                         <div class="card-footer py-4">
                             <nav class="d-flex justify-content-end" aria-label="...">
-                                
+
                             </nav>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="alert alert-danger alert-dismissible fade show">
-                <span>
-                    <b> </b> This is a PRO feature!</span>
-            </div>
         </div>
     </div>
-        <footer class="footer footer-black  footer-white ">
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="footer-nav">
-                <ul>
-                    <li>
-                        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>
-                    </li>
-                    <li>
-                        <a href="https://updivision.com" target="_blank">UpDivision</a>
-                    </li>
-                    <li>
-                        <a href="http://blog.creative-tim.com/" target="_blank">Blog</a>
-                    </li>
-                    <li>
-                        <a href="https://www.creative-tim.com/license" target="_blank">Licenses</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="credits ml-auto">
-                <span class="copyright">
-                    ©
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script>2020, made with <i class="fa fa-heart heart"></i> by <a class="" href="https://www.creative-tim.com" target="_blank">Creative Tim</a> and <a class="" target="_blank" href="https://updivision.com">UPDIVISION</a>
-                </span>
-            </div>
-        </div>
-    </div>
-</footer>    </div>
-</div>        <div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-        <a href="#" data-toggle="dropdown">
-            <i class="fa fa-cog fa-2x"> </i>
-        </a>
-        <ul class="dropdown-menu">
-            <li class="header-title"> Sidebar Background</li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger background-color">
-                    <div class="badge-colors text-center">
-                        <span class="badge filter badge-light active" data-color="white"></span>
-                        <span class="badge filter badge-dark" data-color="black"></span>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="header-title"> Sidebar Active Color</li>
-            <li class="adjustments-line text-center">
-                <a href="javascript:void(0)" class="switch-trigger active-color">
-                    <span class="badge filter badge-primary" data-color="primary"></span>
-                    <span class="badge filter badge-info" data-color="info"></span>
-                    <span class="badge filter badge-success" data-color="success"></span>
-                    <span class="badge filter badge-warning" data-color="warning"></span>
-                    <span class="badge filter badge-danger active" data-color="danger"></span>
-                </a>
-            </li>
-            <li class="button-container">
-                <a href="https://www.creative-tim.com/product/paper-dashboard-laravel" target="_blank" class="btn btn-primary btn-block btn-round">Download Now</a>
-            </li>
-            <li class="button-container">
-                <a href="https://paper-dashboard-laravel.creative-tim.com/docs/getting-started/laravel-setup.html" target="_blank" class="btn btn-outline-default btn-block btn-round">
-                    <i class="nc-icon nc-paper"></i> Documentation
-                </a>
-            </li>
-            <li class="header-title">
-                Want more components?
-            </li>
-            <li class="button-container">
-                <a href="https://www.creative-tim.com/product/paper-dashboard-pro-laravel" target="_blank" class="btn btn-danger btn-block btn-round">
-                    Get Pro Version
-                </a>
-            </li>
-            <li class="header-title">Thank you for 95 shares!</li>
-            <li class="button-container text-center">
-                <button id="twitter" class="btn btn-outline-default btn-round btn-sm sharrre"><i class="fa fa-twitter"></i>
-                    · 45</button>
-                <button id="facebook" class="btn btn-outline-default btn-round btn-sm sharrre"><i class="fa fa-facebook-f"></i>
-                    · 50</button>
-                <br>
-                <br>
-                <a class="github-button" href="https://github.com/creativetimofficial/paper-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
-            </li>
-        </ul>
-    </div>
-</div>        
+
+
     <!--   Core JS Files   -->
     <script src="{{ asset('paper') }}/js/core/jquery.min.js"></script>
     <script src="{{ asset('paper') }}/js/core/popper.min.js"></script>
@@ -437,7 +310,7 @@ The above copyright notice and this permission notice shall be included in all c
     <script src="{{ asset('paper') }}/demo/demo.js"></script>
     <!-- Sharrre libray -->
     <script src="{{ asset('paper') }}/demo/jquery.sharrre.js"></script>
-    
+
     @stack('scripts')
 
     @include('layouts.navbars.fixed-plugin-js')
