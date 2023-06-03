@@ -16,7 +16,7 @@
 
 .typography-line span {
   bottom: 10px;
-  color: #c0c1c2;
+  color: #626466;
   display: block;
   font-weight: 400;
   font-size: 13px;
@@ -71,7 +71,7 @@
 .demo-icons body {
   font-size: 1.6rem;
   font-family: sans-serif;
-  color: #333333;
+  color: #212121;
   background: white;
 }
 
@@ -143,7 +143,7 @@
 .demo-icons ul input {
   display: inline-block;
   font-size: 1rem;
-  color: #999999;
+  color: #080707;
   -webkit-user-select: auto;
   -moz-user-select: auto;
   -ms-user-select: auto;

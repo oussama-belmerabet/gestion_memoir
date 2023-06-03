@@ -7,15 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('paper') }}/img/apple-icon.png">
     <link rel="icon" type="image/png" href="{{ asset('paper') }}/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-    <!-- Extra details for Live View on GitHub Pages -->
-    <!-- Canonical SEO -->
     <link rel="canonical" href="https://www.creative-tim.com/product/paper-dashboard-laravel" />
-
-
-    <!--  Social tags      -->
-    <meta name="keywords" content="design system, dashboard, bootstrap 4 dashboard, bootstrap 4 design, bootstrap 4 system, bootstrap 4, bootstrap 4 uit kit, bootstrap 4 kit, paper, paper dashboard, creative tim, updivision, html dashboard, html css template, web template, bootstrap, bootstrap 4, css3 template, frontend, responsive bootstrap template, bootstrap dashboard, responsive dashboard, laravel, laravel php, laravel php framework, free laravel admin template, free laravel admin, free laravel admin template + Front End + CRUD, crud laravel php, crud laravel, laravel backend admin dashboard">
-    <meta name="description" content="Start your development with a Bootstrap 4 Admin Dashboard built for Laravel Framework 5.5 and Up.">
 
 
     <!-- Schema.org markup for Google+ -->
@@ -23,17 +15,6 @@
     <meta itemprop="description" content="Start your development with a Bootstrap 4 Admin Dashboard built for Laravel Framework 5.5 and Up.">
 
     <meta itemprop="image" content="https://s3.amazonaws.com/creativetim_bucket/products/209/opt_pd_laravel_thumbnail.jpg">
-
-
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="product">
-    <meta name="twitter:site" content="@creativetim">
-    <meta name="twitter:title" content="Paper Dashboard Laravel by Creative Tim">
-
-    <meta name="twitter:description" content="Start your development with a Bootstrap 4 Admin Dashboard built for Laravel Framework 5.5 and Up.">
-    <meta name="twitter:creator" content="@creativetim">
-    <meta name="twitter:image" content="https://s3.amazonaws.com/creativetim_bucket/products/209/opt_pd_laravel_thumbnail.jpg">
-
 
     <!-- Open Graph data -->
     <meta property="fb:app_id" content="655968634437471">
@@ -44,9 +25,7 @@
     <meta property="og:description" content="Start your development with a Bootstrap 4 Admin Dashboard built for Laravel Framework 5.5 and Up." />
     <meta property="og:site_name" content="Creative Tim" />
 
-    <title>
-        {{ __('Paper Dashboard by Creative Tim') }}
-    </title>
+
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
     <!--     Fonts and icons     -->
@@ -56,7 +35,7 @@
     <link href="{{ asset('paper') }}/css/bootstrap.min.css" rel="stylesheet" />
     <link href="{{ asset('paper') }}/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="{{ asset('paper') }}/demo/demo.css" rel="stylesheet" />
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -100,14 +79,13 @@
 
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
+
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <div class="wrapper">
 
-                <div class="sidebar" data-color="white" data-active-color="danger">
+                <div class="sidebar text-black font-bold" data-color="white" data-active-color="black">
                     <div class="logo">
                         <a href="#" class="simple-text logo-normal">
                             {{ __('Gestion memoir') }}
@@ -128,8 +106,8 @@
                                         <b class="caret"></b>
                                     </p>
                                 </a>
-                                <div class="collapse show" id="laravelExamples">
-                                    <ul class="nav">
+                                <div class="collapse show text-black font-bold " id="laravelExamples">
+                                    <ul class="nav text-slate-900">
                                         <li >
                                             <a href="{{ route('profile.edit') }}">
                                                 <span class="sidebar-normal">{{ __(' List Etudiant ') }}</span>
@@ -176,6 +154,7 @@
                         </ul>
                     </div>
                 </div>
+
     <div class="main-panel">
         <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
             <div class="container-fluid">
@@ -241,11 +220,12 @@
                     </ul>
                 </div>
             </div>
-        </nav>            <div class="content">
-        <div class="container-fluid mt--7">
-            <div class="row">
-                <div class="col">
-                    <div class="card shadow">
+        </nav>
+        <div class="content">
+            <div class="container-fluid mt--7">
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow">
                         <div class="card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col-8">
@@ -290,6 +270,13 @@
                 </div>
             </div>
         </div>
+        <form class="w-full max-w-lg">
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                </div>
+            </div>
+        </form>
+
     </div>
 
 

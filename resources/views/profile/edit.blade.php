@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <div class="author">
                             <a href="#">
-                                <img class="avatar border-gray" src="{{ asset('paper/img/mike.jpg') }}" alt="...">
+                                <img class="avatar border-gray" src="{{ asset('paper/img/default-avatar.png') }}" alt="...">
 
                                 <h5 class="title">{{ __(auth()->user()->name)}}</h5>
                             </a>

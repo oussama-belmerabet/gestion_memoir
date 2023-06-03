@@ -4,20 +4,64 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\AvancementController;
+use App\Http\Controllers\ChoixExamenController;
+use App\Http\Controllers\EMController;
+use App\Http\Controllers\EnseignantController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PropositionController;
+use App\Http\Controllers\RAController;
+use App\Http\Controllers\ReclamationController;
+use App\Http\Controllers\RSMController;
+use App\Http\Controllers\SujetController;
+use App\Http\Controllers\UserController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-Route::get('/test',function(){
-    return view('users.index');
-});
+Route::get('/em', [RSMController::class, 'EM']);
+Route::get('/enseignant', [RSMController::class, 'enseignant']);
+Route::post('/create-ra', [RSMController::class, 'createRA']);
+Route::post('/create-em', [RSMController::class, 'createEM']);
+Route::post('/create-enseignant', [RSMController::class, 'createEnseignant']);
+
+
+// RSM Routes
+Route::post('/accounts/create', [AccountController::class, 'create']);
+Route::get('/accounts', [AccountController::class, 'index']);
+Route::get('/propositions', [PropositionController::class, 'index']);
+Route::post('/teachers/selection', [EnseignantController::class, 'selectTeachers']);
+Route::get('/sujets/modifies', [SujetController::class, 'getModifiedList']);
+Route::post('/sujets/affecter', [SujetController::class, 'assignSubjects']);
+Route::get('/avancement/projets', [AvancementController::class, 'getProjectProgress']);
+Route::get('/reclamations', [ReclamationController::class, 'index']);
+Route::get('/choix/enseignants', [ChoixExamenController::class, 'getTeacherChoices']);
+Route::post('/sujets/propose', [SujetController::class, 'proposeSubject']);
+Route::get('/sujets/propose', [SujetController::class, 'propose']);
+// RA Routes
+Route::get('/addRa',[RAController::class,'show']);
+Route::get('/propositions', [PropositionController::class, 'index']);
+Route::post('/teachers/selection', [EnseignantController::class, 'selectTeachers']);
+Route::get('/sujets', [SujetController::class, 'index']);
+Route::post('/sujets/affecter', [SujetController::class, 'assignSubjects']);
+Route::get('/avancement/projets', [AvancementController::class, 'getProjectProgress']);
+Route::get('/reclamations', [ReclamationController::class, 'index']);
+Route::get('/choix/enseignants', [ChoixExamenController::class, 'getTeacherChoices']);
+
+// Enseignant Routes
+Route::post('/sujets/propose', [SujetController::class, 'proposeSubject']);
+Route::get('/teachers', [EnseignantController::class, 'index']);
+Route::get('/sujets/valides', [SujetController::class, 'getValidatedList']);
+Route::put('/avancement/projets', [AvancementController::class, 'updateProjectProgress']);
+Route::get('/sujets/examiner', [SujetController::class, 'getSubjectsToExamine']);
+Route::get('/resultat/sujets', [SujetController::class, 'getExamResults']);
+
+// EM Routes
+Route::get('/sujets/valides', [SujetController::class, 'getValidatedList']);
+Route::get('/resultat/affectation', [SujetController::class, 'getAssignmentResults']);
+Route::get('/resultat/sujets', [SujetController::class, 'getExamResults']);
+
+
+
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
