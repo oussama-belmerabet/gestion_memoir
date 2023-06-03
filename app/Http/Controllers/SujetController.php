@@ -99,4 +99,14 @@ class SujetController extends Controller
         $sujet->delete();
         return redirect()->route('sujet.index')->with('success', 'Sujet deleted successfully!');
     }
+
+    public function getValidatedList()
+    {
+        $validatedSujets = Sujet::whereNotNull('validated_at')->get();
+
+        // Optionally, you can perform additional operations or data manipulation here.
+
+        // Return the response with the validated sujets
+        return view('sujets.validated', ['sujets' => $validatedSujets]);
+    }
 }
