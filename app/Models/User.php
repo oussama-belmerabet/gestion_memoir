@@ -50,4 +50,9 @@ class User extends Authenticatable
     public function les_etudiant(){
         return $this->hasMany(les_etudiants::class);
     }
+
+    public function rsm()
+    {
+        return $this->hasOne(RSM::class, 'id_RSM');
+    }
 }

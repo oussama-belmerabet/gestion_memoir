@@ -28,62 +28,6 @@ public function index()
 }
 
 
-     public function proposeSubject(Request $request)
-     {
-
-     }
-
-     public function viewEncadrementTeachers()
-     {
-
-     }
-
-     public function viewValidatedSubjects()
-     {
-
-     }
-
-     public function updateProjectProgress(Request $request)
-     {
-
-     }
-
-     public function viewSubjectsToExamine()
-     {
-
-     }
-
-     public function viewExaminationResult(Request $request)
-     {
-
-     }
-
-
-
-    public function create()
-    {
-        //
-    }
-
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-
-    public function show(string $id)
-    {
-        //
-    }
-
-
-    public function edit(string $id)
-    {
-        //
-    }
-
-
     public function update(Request $request, string $id)
     {
         //

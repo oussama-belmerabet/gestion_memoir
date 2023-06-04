@@ -22,9 +22,8 @@ class Enseignant extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nom',
-        'prenom',
         'grade',
+        'prenom',
         'domaine',
         'année_r',
         'nbr_sujet',
@@ -49,7 +48,7 @@ class Enseignant extends Model
 
     public function rAs()
     {
-        return $this->hasMany(RA::class);
+        return $this->hasOne(RA::class);
     }
 
     public function juries()
@@ -60,5 +59,10 @@ class Enseignant extends Model
     public function choisirSujetExamins()
     {
         return $this->belongsToMany(Choisir_sujet_examin::class);
+    }
+
+    public function rsm()
+    {
+        return $this->hasOne(RSM::class);
     }
 }

@@ -72,9 +72,7 @@
         console.log('Facebook Track Error:', err);
         }
     </script>
-    <noscript>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=111649226022273&ev=PageView&noscript=1" />
-    </noscript>
+
 </head>
 
 
@@ -221,6 +219,9 @@
                 </div>
             </div>
         </nav>
+
+        @if( auth()->user()->id == $rsm->id_RSM)
+
         <div class="content">
             <div class="container-fluid mt--7">
                 <div class="row">
@@ -229,10 +230,11 @@
                         <div class="card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h3 class="mb-0">Users</h3>
+
+                                    <h3 class="mb-0">Les Etudiant</h3>
                                 </div>
                                 <div class="col-4 text-right">
-                                    <a href="#" class="btn btn-sm btn-primary">Add user</a>
+                                    <a href="/em" class="btn btn-sm p-2 bg-green-400 border-gray-600">Ajouter Etudiant</a>
                                 </div>
                             </div>
                         </div>
@@ -244,21 +246,35 @@
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Creation Date</th>
-                                        <th scope="col"></th>
+                                        <th scope="col">Nom</th>
+                                        <th scope="col">Prenom</th>
+                                        <th scope="col">Spécialité</th>
+                                        <th></th><th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                                                            <tr>
-                                            <td>Admin Admin</td>
+                                    @foreach($em as $e)
+                                        <tr>
+
+                                            <td>{{ $e->nom }}</td>
                                             <td>
-                                                <a href="mailto:admin@paper.com">admin@paper.com</a>
+                                                {{ $e->prenom }}
                                             </td>
-                                            <td>25/02/2020 11:37</td>
-                                                                                    </tr>
-                                                                    </tbody>
+                                            <td>{{ $e->spécialité }}</td>
+
+                                            <td class="p-0">
+                                                <div class="col-4 text-right">
+                                                <a href="/supremeEm/{{$e->num_et}}" class="btn btn-sm p-2 btn-danger">Supremer</a>
+                                            </div></td>
+                                            <td class="p-0">
+                                                <div class="col-4 text-right">
+                                                <a href="/modifier/{{$e->num_et}}" class="btn btn-sm btn-success">modifier
+                                                </a>
+                                            </div></td>
+
+                                        </tr>
+                                        @endforeach
+                                </tbody>
                             </table>
                         </div>
                         <div class="card-footer py-4">
@@ -270,6 +286,285 @@
                 </div>
             </div>
         </div>
+
+        <div class="content">
+            <div class="container-fluid mt--7">
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow">
+                        <div class="card-header border-0">
+                            <div class="row align-items-center">
+                                <div class="col-8">
+
+                                    <h3 class="mb-0">Les Enseignant</h3>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <a href="/enseignant" class="btn btn-sm p-2 bg-green-400 border-gray-600">Ajouter Enseignant</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                                                    </div>
+
+                        <div class="table-responsive">
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Nom</th>
+                                        <th scope="col">Prenom</th>
+                                        <th scope="col">grade</th>
+                                        <th>domaine</th>
+                                        <th>année_r</th>
+                                        <th>nbr_sujet</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($enseignants as $e)
+                                        <tr>
+
+                                            <td>{{ $e->user->name }}</td>
+                                            <td>
+                                                {{ $e->prenom }}
+                                            </td>
+                                            <td>{{ $e->grade }}</td>
+                                            <td>{{$e->domaine}}</td>
+                                            <td>{{ $e->année_r }}</td>
+                                            <td>{{ $e->nbr_sujet }}</td>
+
+                                            <td class="p-0">
+                                                <div class="col-4 text-right">
+                                                <a href="/suprimer/enseignant/{{$e->num_es}}" class="btn btn-sm p-2 btn-danger">Supremer</a>
+                                            </div></td>
+                                            <td class="p-0">
+                                                <div class="col-4 text-right">
+                                                <a href="/modifier/{{$e->num_es}}" class="btn btn-sm btn-success">modifier
+                                                </a>
+                                            </div></td>
+
+                                        </tr>
+                                        @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer py-4">
+                            <nav class="d-flex justify-content-end" aria-label="...">
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="content">
+            <div class="container-fluid mt--7">
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow">
+                        <div class="card-header border-0">
+                            <div class="row align-items-center">
+                                <div class="col-8">
+
+                                    <h3 class="mb-0">Les Responsable Assistant</h3>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <a href="/addRa" class="btn btn-sm p-2 bg-green-400 border-gray-600">Ajouter Ra</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                                                    </div>
+
+                        <div class="table-responsive">
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Nom</th>
+                                        <th scope="col">Prenom</th>
+                                        <th scope="col">Spécialité</th>
+                                        <th></th><th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($ra as $e)
+                                        <tr>
+
+                                            <td>{{dd($e)  }}</td>
+                                            <td>
+                                                {{ $e->enseignant}}
+                                            </td>
+                                            <td>{{ $e->spécialité }}</td>
+
+                                            <td class="p-0">
+                                                <div class="col-4 text-right">
+                                                <a href="/supremeEm/{{$e->num_et}}" class="btn btn-sm p-2 btn-danger">Supremer</a>
+                                            </div></td>
+                                            <td class="p-0">
+                                                <div class="col-4 text-right">
+                                                <a href="/modifier/{{$e->num_et}}" class="btn btn-sm btn-success">modifier
+                                                </a>
+                                            </div></td>
+
+                                        </tr>
+                                        @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer py-4">
+                            <nav class="d-flex justify-content-end" aria-label="...">
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content">
+            <div class="container-fluid mt--7">
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow">
+                        <div class="card-header border-0">
+                            <div class="row align-items-center">
+                                <div class="col-8">
+
+                                    <h3 class="mb-0">Les Etudiant</h3>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <a href="/em" class="btn btn-sm p-2 bg-green-400 border-gray-600">Ajouter Etudiant</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                                                    </div>
+
+                        <div class="table-responsive">
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Nom</th>
+                                        <th scope="col">Prenom</th>
+                                        <th scope="col">Spécialité</th>
+                                        <th></th><th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($em as $e)
+                                        <tr>
+
+                                            <td>{{ $e->nom }}</td>
+                                            <td>
+                                                {{ $e->prenom }}
+                                            </td>
+                                            <td>{{ $e->spécialité }}</td>
+
+                                            <td class="p-0">
+                                                <div class="col-4 text-right">
+                                                <a href="/supremeEm/{{$e->num_et}}" class="btn btn-sm p-2 btn-danger">Supremer</a>
+                                            </div></td>
+                                            <td class="p-0">
+                                                <div class="col-4 text-right">
+                                                <a href="/modifier/{{$e->num_et}}" class="btn btn-sm btn-success">modifier
+                                                </a>
+                                            </div></td>
+
+                                        </tr>
+                                        @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer py-4">
+                            <nav class="d-flex justify-content-end" aria-label="...">
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="content">
+            <div class="container-fluid mt--7">
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow">
+                        <div class="card-header border-0">
+                            <div class="row align-items-center">
+                                <div class="col-8">
+
+                                    <h3 class="mb-0">Les Etudiant</h3>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <a href="/em" class="btn btn-sm p-2 bg-green-400 border-gray-600">Ajouter Etudiant</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                                                    </div>
+
+                        <div class="table-responsive">
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Nom</th>
+                                        <th scope="col">Prenom</th>
+                                        <th scope="col">Spécialité</th>
+                                        <th></th><th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($em as $e)
+                                        <tr>
+
+                                            <td>{{ $e->nom }}</td>
+                                            <td>
+                                                {{ $e->prenom }}
+                                            </td>
+                                            <td>{{ $e->spécialité }}</td>
+
+                                            <td class="p-0">
+                                                <div class="col-4 text-right">
+                                                <a href="/supremeEm/{{$e->num_et}}" class="btn btn-sm p-2 btn-danger">Supremer</a>
+                                            </div></td>
+                                            <td class="p-0">
+                                                <div class="col-4 text-right">
+                                                <a href="/modifier/{{$e->num_et}}" class="btn btn-sm btn-success">modifier
+                                                </a>
+                                            </div></td>
+
+                                        </tr>
+                                        @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer py-4">
+                            <nav class="d-flex justify-content-end" aria-label="...">
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        @endif
+
+
+
         <form class="w-full max-w-lg">
             <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">

@@ -19,11 +19,15 @@ use App\Http\Controllers\SujetController;
 use App\Http\Controllers\UserController;
 
 Route::get('/em', [RSMController::class, 'EM']);
+Route::get('/supremeEm/{id}',[RSMController::class,'supremeEm']);
+Route::get('/modifier/{num_et}',[RSMController::class,'modifierEm']);
 Route::get('/enseignant', [RSMController::class, 'enseignant']);
 Route::post('/create-ra', [RSMController::class, 'createRA']);
 Route::post('/create-em', [RSMController::class, 'createEM']);
-Route::post('/create-enseignant', [RSMController::class, 'createEnseignant']);
+Route::post('/create-enseignant', [AccountController::class, 'createEnseignant']);
 
+Route::get('/suprimer/enseignant/{id}', [AccountController::class, 'deleteEnseignant']);
+Route::get('/modifier/enseignant/{id}', [RSMController::class, 'enseignant']);
 
 // RSM Routes
 Route::post('/accounts/create', [AccountController::class, 'create']);
@@ -92,6 +96,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
+Route::get('/user',[AccountController::class, 'show']);
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);

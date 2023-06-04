@@ -21,6 +21,8 @@ use App\Models\État_avancement;
 class les_etudiants extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'num_et';
+    
     protected $fillable = [
         'nom',
         'prenom',

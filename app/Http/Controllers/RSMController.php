@@ -21,15 +21,15 @@ class RSMController extends Controller
     {
         // Validate the request data
         $validator = Validator::make($request->all(), [
-            'name' => 'required|unique:users',
+            'name' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required',
-            'num_es' => 'required|exists:enseignants,num_es',
+            'num_es' => 'required|unique',
         ]);
 
         // Check if validation fails
         if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 400);
+            return redirect()->back()->withErrors($validator)->withInput();;
         }
 
         // Retrieve the validated data
@@ -44,10 +44,19 @@ class RSMController extends Controller
 
 
         // Return a success response
-        return view('users.index');
+        return back();
     }
 
+    public function supremeEm($id){
+        DB::delete('delete  FROM  les_etudiants where num_et = ?', [$id]);
+        return back();
+    }
 
+    public function modifierEm($num_et){
+        $em = les_etudiants::find($num_et);
+        dd($em);
+        return back();
+    }
 
     public function EM()
     {
@@ -58,6 +67,7 @@ class RSMController extends Controller
     public function createEM(Request $request)
     {
         $data = $request->all();
+
 
         // Create a new user account for EM
         $user = User::create($data);
@@ -78,118 +88,5 @@ class RSMController extends Controller
     }
 
 
-    public function createEnseignant(Request $request)
-    {
-        // Retrieve the request data
-        $data = $request->all();
 
-        // Create a new user account for Enseignant
-        $user = User::create($data);
-
-        // Create a new Enseignants entry in the 'enseignants' table
-        $enseignant = Enseignant::create([
-            'nom' => $data['nom'],
-            'prenom' => $data['prenom'],
-            'grade' => $data['grade'],
-            'domaine' => $data['domaine'],
-            'année_r' => $data['année_r'],
-            'nbr_sujet' => $data['nbr_sujet'],
-            'id_user' => $user->id
-        ]);
-
-        return redirect()->back();
-    }
-    public function viewProposedSubjects()
-    {
-        // View proposed subjects logic
-    }
-
-    public function selectEncadrementTeachers(Request $request)
-    {
-        // Select encadrement teachers logic
-    }
-
-    public function viewModifiedSubjects()
-    {
-        // View modified subjects logic
-    }
-
-    public function assignInitialSubjects(Request $request)
-    {
-        // Assign initial subjects logic
-    }
-
-    public function viewProjectProgress()
-    {
-        // View project progress logic
-    }
-
-    public function viewReclamations()
-    {
-        // View reclamations logic
-    }
-
-    public function viewExaminationChoices()
-    {
-        // View examination choices logic
-    }
-
-    public function proposeSubject(Request $request)
-    {
-        // Propose subject logic
-    }
-
-
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

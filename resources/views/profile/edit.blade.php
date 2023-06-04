@@ -28,8 +28,9 @@
 
                                 <h5 class="title">{{ __(auth()->user()->name)}}</h5>
                             </a>
+
                             <p class="description">
-                            @ {{ __(auth()->user()->name)}}
+                            
                             </p>
                         </div>
                         <p class="description text-center">
