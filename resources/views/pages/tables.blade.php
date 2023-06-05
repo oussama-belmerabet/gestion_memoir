@@ -9,23 +9,35 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title"> Simple Table</h4>
+                        <h4 class="card-title"> les Sujet accepter</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
-                                    <th>
-                                        Name
+
+                                    <th class="text-right">
+                                        classement
                                     </th>
                                     <th>
-                                        Country
+                                        intitulé
                                     </th>
                                     <th>
-                                        City
+                                        Description
+                                    </th>
+                                    <th>
+                                        Binome
                                     </th>
                                     <th class="text-right">
-                                        Salary
+                                        Encadrer
+                                    </th>
+
+                                    <th class="text-right">
+                                        pourcentage
+                                    </th>
+
+                                    <th class="text-right">
+                                        Date
                                     </th>
                                 </thead>
                                 <tbody>

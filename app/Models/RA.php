@@ -11,7 +11,7 @@ class RA extends Model
     use HasFactory;
 
     public function enseignant(){
-        return $this->belongsTo(Enseignant::class,'num_es');
+        return $this->belongsTo(Enseignant::class);
     }
 
 }

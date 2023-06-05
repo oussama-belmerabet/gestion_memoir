@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('num_sujet');
             $table->string('intitulé');
             $table->text('description');
-            $table->unsignedBigInteger('num_es');
+            $table->unsignedBigInteger('num_es')->default(0);
             $table->integer('num_com_accepter')->default(0);
             $table->integer('num_com_refuser')->default(0);
             $table->timestamps();

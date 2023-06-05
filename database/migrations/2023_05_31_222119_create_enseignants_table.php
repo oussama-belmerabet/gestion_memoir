@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('domaine');
             $table->integer('année_r');
             $table->integer('nbr_sujet');
-            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_user')->unique();
             $table->timestamps();
 
             $table->foreign('id_user')->references('id')->on('users');

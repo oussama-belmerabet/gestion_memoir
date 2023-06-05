@@ -11,10 +11,7 @@
       <textarea name="description" id="description" class="form-control" rows="5"></textarea>
     </div>
 
-    <div class="form-group">
-      <label for="num_es">Numéro de l'enseignant:</label>
-      <input type="number" name="num_es" id="num_es" class="form-control">
-    </div>
+    
 
     <!-- Add other input fields for additional sujet fields -->
 

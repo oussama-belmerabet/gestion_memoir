@@ -32,7 +32,7 @@ class Sujet extends Model
 
     public function enseignant()
     {
-        return $this->belongsTo(Enseignant::class, 'num_es');
+        return $this->belongsTo(Enseignant::class, 'num_es', 'num_es');
     }
 
     public function les_etudiants()

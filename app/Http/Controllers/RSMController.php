@@ -16,6 +16,12 @@ class RSMController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function supremerRa($id){
+        $ra = RA::where('num_es', $id)->first();
+
+        DB::delete('delete from r_a_s where id_RA = ?', [$ra->id_RA]);
+        return redirect('/suprimer/enseignant/'.$ra->num_es);
+    }
 
     public function createRA(Request $request)
     {
@@ -24,7 +30,7 @@ class RSMController extends Controller
             'name' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required',
-            'num_es' => 'required|unique',
+            'num_es' => 'required',
         ]);
 
         // Check if validation fails
@@ -48,7 +54,9 @@ class RSMController extends Controller
     }
 
     public function supremeEm($id){
+        $em = les_etudiants::find($id);
         DB::delete('delete  FROM  les_etudiants where num_et = ?', [$id]);
+        user::destroy($em->id_user);
         return back();
     }
 

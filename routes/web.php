@@ -18,6 +18,7 @@ use App\Http\Controllers\RSMController;
 use App\Http\Controllers\SujetController;
 use App\Http\Controllers\UserController;
 
+Route::get('/suprimer/ra/{id}',[RSMController::class,'supremerRa']);
 Route::get('/em', [RSMController::class, 'EM']);
 Route::get('/supremeEm/{id}',[RSMController::class,'supremeEm']);
 Route::get('/modifier/{num_et}',[RSMController::class,'modifierEm']);
@@ -25,6 +26,8 @@ Route::get('/enseignant', [RSMController::class, 'enseignant']);
 Route::post('/create-ra', [RSMController::class, 'createRA']);
 Route::post('/create-em', [RSMController::class, 'createEM']);
 Route::post('/create-enseignant', [AccountController::class, 'createEnseignant']);
+Route::get('/block/{id}',[AccountController::class,'block']);
+
 
 Route::get('/suprimer/enseignant/{id}', [AccountController::class, 'deleteEnseignant']);
 Route::get('/modifier/enseignant/{id}', [RSMController::class, 'enseignant']);
@@ -35,7 +38,7 @@ Route::get('/accounts', [AccountController::class, 'index']);
 Route::get('/propositions', [PropositionController::class, 'index']);
 Route::post('/teachers/selection', [EnseignantController::class, 'selectTeachers']);
 Route::get('/sujets/modifies', [SujetController::class, 'getModifiedList']);
-Route::post('/sujets/affecter', [SujetController::class, 'assignSubjects']);
+Route::get('/sujets/affecter/{id}', [SujetController::class, 'assignSubjects']);
 Route::get('/avancement/projets', [AvancementController::class, 'getProjectProgress']);
 Route::get('/reclamations', [ReclamationController::class, 'index']);
 Route::get('/choix/enseignants', [ChoixExamenController::class, 'getTeacherChoices']);
@@ -46,7 +49,6 @@ Route::get('/addRa',[RAController::class,'show']);
 Route::get('/propositions', [PropositionController::class, 'index']);
 Route::post('/teachers/selection', [EnseignantController::class, 'selectTeachers']);
 Route::get('/sujets', [SujetController::class, 'index']);
-Route::post('/sujets/affecter', [SujetController::class, 'assignSubjects']);
 Route::get('/avancement/projets', [AvancementController::class, 'getProjectProgress']);
 Route::get('/reclamations', [ReclamationController::class, 'index']);
 Route::get('/choix/enseignants', [ChoixExamenController::class, 'getTeacherChoices']);

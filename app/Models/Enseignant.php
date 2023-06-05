@@ -46,7 +46,7 @@ class Enseignant extends Model
         return $this->hasMany(Encadrement::class);
     }
 
-    public function rAs()
+    public function ra()
     {
         return $this->hasOne(RA::class);
     }

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Sujet;
+use App\Models\RSM;
+use App\Models\Classement;
+use App\Models\Enseignant;
 
 class SujetController extends Controller
 {
@@ -14,16 +17,16 @@ class SujetController extends Controller
         $request->validate([
             'intitulé' => 'required',
             'description' => 'required',
-            'num_es' => 'required|exists:enseignants,num_es',
             'num_com_accepter' => 'integer',
             'num_com_refuser' => 'integer',
         ]);
 
+        $rsm = RSM::all();
 
         $sujet = Sujet::create([
             'intitulé' => $request->input('intitulé'),
             'description' => $request->input('description'),
-            'num_es' => $request->input('num_es'),
+            'num_es'=>$rsm[0]->id_RSM,
             'num_com_accepter' => $request->input('num_com_accepter', 0),
             'num_com_refuser' => $request->input('num_com_refuser', 0),
         ]);
@@ -35,8 +38,9 @@ class SujetController extends Controller
         return view('sujets.proposerSujet');
     }
     public function index(){
-            $sujets = sujet::all();
-            return view('sujets.index',compact('sujets'));
+            $sujets = Sujet::with('enseignant','les_etudiants')->get();
+            dd($sujets);
+            return view('pages.tables',compact('sujets'));
     }
 
     public function show($id)
@@ -84,7 +88,7 @@ class SujetController extends Controller
         return response()->json($modifiedSujets);
     }
 
-    public function assignSubjects(Request $request)
+    public function assignSubjects($id_sujet)
     {
         $category = $request->input('category');
         $sujetIds = $request->input('sujet_ids');
@@ -103,10 +107,6 @@ class SujetController extends Controller
     public function getValidatedList()
     {
         $validatedSujets = Sujet::whereNotNull('validated_at')->get();
-
-        // Optionally, you can perform additional operations or data manipulation here.
-
-        // Return the response with the validated sujets
         return view('sujets.validated', ['sujets' => $validatedSujets]);
     }
 }
