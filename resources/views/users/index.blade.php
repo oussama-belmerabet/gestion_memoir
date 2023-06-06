@@ -30,9 +30,6 @@
 
 <body>
 
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
             <div class="wrapper">
 
                 <div class="sidebar text-black font-bold" data-color="white" data-active-color="black">
@@ -60,27 +57,7 @@
                                     <ul class="nav text-slate-900">
                                         <li >
                                             <a href="{{ route('profile.edit') }}">
-                                                <span class="sidebar-normal">{{ __(' List Etudiant ') }}</span>
-                                            </a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="{{ route('page.index', 'user') }}">
-                                                <span class="sidebar-normal">{{ __('  List Responsable ') }}</span>
-                                            </a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="{{ route('page.index', 'user') }}">
-                                                <span class="sidebar-normal">{{ __('  List Enseignant ') }}</span>
-                                            </a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="{{ route('page.index', 'user') }}">
-                                                <span class="sidebar-normal">{{ __('  List des sujets ') }}</span>
-                                            </a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="{{ route('page.index', 'user') }}">
-                                                <span class="sidebar-normal">{{ __('  List Des Reclamation ') }}</span>
+                                                <span class="sidebar-normal">{{ __(' users manager ') }}</span>
                                             </a>
                                         </li>
                                         <li class="active">
@@ -91,11 +68,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li >
-                                <a href="{{ route('page.index', 'map') }}">
-                                    <p>{{ __('Maps') }}</p>
-                                </a>
-                            </li>
+                            <li>
                                 <a href="{{ route('page.index', 'tables') }}">
                                     <i class="nc-icon nc-tile-56"></i>
                                     <p>{{ __('Table List') }}</p>
@@ -120,13 +93,7 @@
                     <ul class="navbar-nav">
 
                         <li class="nav-item btn-rotate dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink2"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="nc-icon nc-settings-gear-65"></i>
-                                <p>
-                                    <span class="d-lg-none d-md-block">{{ __('Account') }}</span>
-                                </p>
-                            </a>
+                            
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink2">
                                 <form class="dropdown-item" action="{{ route('logout') }}" id="formLogOut" method="POST" style="display: none;">
                                     @csrf
@@ -414,7 +381,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach($sujets as $sujet)
-                                    
+
                                         <tr>
 
                                             <td>{{ $sujet->num_sujet }}</td>

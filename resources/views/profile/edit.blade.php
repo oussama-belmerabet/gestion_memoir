@@ -15,6 +15,7 @@
                 {{ session('password_status') }}
             </div>
         @endif
+
         <div class="row">
             <div class="col-md-4">
                 <div class="card card-user">
@@ -30,42 +31,17 @@
                             </a>
 
                             <p class="description">
-                            
+
                             </p>
                         </div>
                         <p class="description text-center">
 
                         </p>
                     </div>
-                    <div class="card-footer">
-                        <hr>
-                        <div class="button-container">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6 col-6 ml-auto">
-                                    <h5>{{ __('12') }}
-                                        <br>
-                                        <small>{{ __('Files') }}</small>
-                                    </h5>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
-                                    <h5>{{ __('2GB') }}
-                                        <br>
-                                        <small>{{ __('Used') }}</small>
-                                    </h5>
-                                </div>
-                                <div class="col-lg-3 mr-auto">
-                                    <h5>{{ __('24,6$') }}
-                                        <br>
-                                        <small>{{ __('Spent') }}</small>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{ __('Team Members') }}</h4>
+                        <h4 class="card-title">{{ __('Binome') }}</h4>
                     </div>
                     <div class="card-body">
                         <ul class="list-unstyled team-members">
@@ -73,12 +49,12 @@
                                 <div class="row">
                                     <div class="col-md-2 col-2">
                                         <div class="avatar">
-                                            <img src="{{ asset('paper/img/faces/ayo-ogunseinde-2.jpg') }}" alt="Circle Image"
+                                            <img src="{{ asset('paper/img/default-avatar.png') }}" alt="Circle Image"
                                                 class="img-circle img-no-padding img-responsive">
                                         </div>
                                     </div>
                                     <div class="col-md-7 col-7">
-                                        {{ __('DJ Khaled') }}
+                                        {{$binome[0]->nom}}
                                         <br />
                                         <span class="text-muted">
                                             <small>{{ __('Offline') }}</small>
@@ -139,6 +115,7 @@
                         </div>
                     </div>
                 </form>
+                
                 <form class="col-md-12" action="{{ route('profile.password') }}" method="POST">
                     @csrf
                     @method('PUT')
@@ -198,5 +175,6 @@
                 </form>
             </div>
         </div>
+
     </div>
 @endsection

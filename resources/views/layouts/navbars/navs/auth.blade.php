@@ -28,16 +28,7 @@
                 </div>
             </form>
             <ul class="navbar-nav">
-    
-                <li class="nav-item btn-rotate dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="nc-icon nc-bell-55"></i>
-                        <p>
-                            <span class="d-lg-none d-md-block">{{ __('Some Actions') }}</span>
-                        </p>
-                    </a>
-                </li>
+
                 <li class="nav-item btn-rotate dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink2"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

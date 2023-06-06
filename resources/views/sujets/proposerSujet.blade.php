@@ -1,6 +1,14 @@
-<form action="/sujets/propose" method="POST">
-    @csrf
+@extends('layouts.app', [
+    'class' => '',
+    'elementActive' => 'profile'
+])
+@section('content')
 
+
+
+<form class="col-md-12  p-5" action="/sujets/propose" method="POST">
+    @csrf
+    <div class="card p-5">
     <div class="form-group">
       <label for="intitule">Intitulé:</label>
       <input type="text" name="intitulé" id="intitule" class="form-control">
@@ -11,9 +19,15 @@
       <textarea name="description" id="description" class="form-control" rows="5"></textarea>
     </div>
 
-    
 
-    <!-- Add other input fields for additional sujet fields -->
+  </div>
+  <div class="card-footer ">
+    <div class="row">
+        <div class="col-md-12 text-center">
+          <button type="submit" class="btn btn-info btn-round">Propose Subject</button>
+        </div>
+    </div>
+</div>
 
-    <button type="submit" class="btn btn-primary">Propose Subject</button>
   </form>
+@endsection

@@ -27,7 +27,7 @@ Route::post('/create-ra', [RSMController::class, 'createRA']);
 Route::post('/create-em', [RSMController::class, 'createEM']);
 Route::post('/create-enseignant', [AccountController::class, 'createEnseignant']);
 Route::get('/block/{id}',[AccountController::class,'block']);
-
+Route::get('/sujetslist',[SujetController::class,'sujetslist']);
 
 Route::get('/suprimer/enseignant/{id}', [AccountController::class, 'deleteEnseignant']);
 Route::get('/modifier/enseignant/{id}', [RSMController::class, 'enseignant']);

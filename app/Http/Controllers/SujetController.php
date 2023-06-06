@@ -109,4 +109,7 @@ class SujetController extends Controller
         $validatedSujets = Sujet::whereNotNull('validated_at')->get();
         return view('sujets.validated', ['sujets' => $validatedSujets]);
     }
+    public function sujetslist(){
+        return view('pages.tables');
+    }
 }

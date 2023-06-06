@@ -22,7 +22,7 @@ class les_etudiants extends Model
 {
     use HasFactory;
     protected $primaryKey = 'num_et';
-    
+
     protected $fillable = [
         'nom',
         'prenom',
@@ -30,7 +30,16 @@ class les_etudiants extends Model
         'id_user'
     ];
 
+    public function les_etudiant(){
+        return $this->hasOne(les_etudiants::class,'num_binome','num_et');
+    }
 
+    public function binome()
+    {
+        return $this->belongsTo(les_etudiants::class,'num_et');
+    }
+
+    
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -41,10 +50,7 @@ class les_etudiants extends Model
         return $this->belongsTo(Sujet::class);
     }
 
-    public function binome()
-    {
-        return $this->belongsTo(les_etudiants::class);
-    }
+
 
     public function reclamation()
     {

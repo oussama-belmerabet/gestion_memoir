@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
 use Illuminate\Support\Facades\Hash;
+use App\Models\les_etudiants;
+use App\Models\RSM;
 
 class ProfileController extends Controller
 {
@@ -15,7 +17,14 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('profile.edit');
+
+        $binome =  les_etudiants::with('les_etudiant')->get();
+
+        $rsm = RSM::with('User')->with('Enseignant')->get();
+        return view('profile.edit',[
+            'rsm' => $rsm[0],
+            'binome'=>$binome,
+        ]);
     }
 
     /**
